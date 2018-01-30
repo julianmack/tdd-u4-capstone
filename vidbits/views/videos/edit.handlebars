@@ -1,0 +1,31 @@
+
+    <div class="create-container">
+      <div class="create-card">
+        <h2 class="form-title">Edit</h2>
+        <form action="/videos/{{video._id}}/updates" method="post">
+          <label class="form-label" for="title">Title</label>
+          <input id="title-input" name="title" maxlength="50" value="{{video.title}}"/>
+          {{#with video.errors.title as |error|}}
+            <span class="error" id="error">{{error.message}}</span>
+          {{/with}}
+          <label class="form-label" for="description">Description</label>
+          <textarea id="description-input" name="description">{{video.description}}</textarea>
+          {{#with video.errors.description as |error|}}
+            <span class="error" id="error">{{error.message}}</span>
+          {{/with}}
+          <label class="form-label" for="videoUrl">Video Url</label>
+          <input id="videoUrl-input" name="videoUrl" oninput="handleChange" value="{{video.videoUrl}}"/>
+          {{#with video.errors.videoUrl as |error|}}
+            <span class="error" id="error">{{error.message}}</span>
+          {{/with}}
+          <div class="form-navigation">
+            <a href="/videos">
+              <img class="back-arrow" src="/img/back.svg" alt="back">
+            </a>
+            <button class="button submit-button" id="submit-button" type="submit">
+              <p>Save a video</p>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>

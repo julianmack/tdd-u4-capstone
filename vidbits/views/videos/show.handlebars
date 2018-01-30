@@ -1,0 +1,32 @@
+<div class="contents-container" id="videos-container">
+  <div class="video-card">
+  <div class="video-title" id="video-title">
+    <h1>{{video.title}}</h1>
+   </div>
+   <a href="/videos/{{video._id}}/edit" id="edit">Edit</a>
+   <form method="post" action="/videos/{{video._id}}/deletions">
+     <input type="submit" value="Delete" id="delete">
+   </form>
+
+   <a href="/videos">
+     <img class="back-arrow" src="/img/back.svg" alt="back">
+   </a>
+   <button class="button submit-button" id="submit-button" type="submit">
+     <p>Save a video</p>
+   </button>
+
+
+   <div class="video-player">
+       <iframe class="video-player" src="{{video.videoUrl}}" frameborder="0" allowfullscreen></iframe>
+   </div>
+   <div class="video-description" id="video-description">
+     <p>{{video.description}}</p>
+   </div>
+ </div>
+</div>
+<div id="navigation">
+<a href="/videos/create">
+  <div class="create-button" id="create-button">
+      <p>Add a Video</p>
+    </div></a>
+</div>
